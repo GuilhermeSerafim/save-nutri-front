@@ -44,7 +44,7 @@ export default function Page() {
       } catch (err) {
         console.error(err);
         setError(
-          "Erro ao conectar com http://localhost:8000. O Python está rodando?"
+          "Erro ao conectar comm a api"
         );
       } finally {
         setIsLoading(false);
