@@ -141,3 +141,40 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* --- ESTILIZAÇÃO DO POPUP DO MAPBOX --- */
+
+/* 1. Remove a borda e o padding padrão do container do Mapbox */
+.mapboxgl-popup-content {
+    border-radius: 0.75rem !important; /* Arredondamento "xl" do Tailwind */
+    overflow: hidden;
+    border: 1px solid #e2e8f0; /* Borda slate-200 */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important; /* Sombra 'lg' */
+}
+
+.mapboxgl-popup-close-button {
+    width: 32px !important;  /* Força largura fixa */
+    height: 32px !important; /* Força altura fixa */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    color: #64748b;
+    top: 8px !important;
+    right: 8px !important;
+    border-radius: 50% !important; /* Agora o círculo será perfeito */
+    background-color: transparent;
+    transition: all 0.2s;
+    z-index: 10;
+    line-height: 1 !important; /* Evita que o texto empurre o círculo */
+}
+
+.mapboxgl-popup-close-button:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+}
+
+/* Remove a ponta (triângulo) do popup para um visual mais limpo */
+.mapboxgl-popup-tip {
+    display: none;
+}
