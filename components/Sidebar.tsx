@@ -1,8 +1,7 @@
 import { ArrowRight, TrendingUp, ChevronRight, Leaf, Utensils, CheckCircle2, ArrowLeft, MapPin, Loader2 } from "lucide-react"
 import { useState } from "react"
 
-// URL FIXA DO BACKEND
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 type SidebarProps = {
   schools: any[]

@@ -7,7 +7,7 @@ import type { MatchResponse } from "@/types";
 import { Loader2 } from "lucide-react";
 
 // --- URL CHUMBADA (HARDCODED) ---
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 export default function Page() {
   const [schools, setSchools] = useState<any[]>([]);
