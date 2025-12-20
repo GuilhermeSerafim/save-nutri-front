@@ -44,7 +44,7 @@ export default function Page() {
       } catch (err) {
         console.error(err);
         setError(
-          "Erro ao conectar comm a api"
+          "Erro ao conectar com a api"
         );
       } finally {
         setIsLoading(false);
