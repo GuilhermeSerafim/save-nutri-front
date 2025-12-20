@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* --- CORES DO SISTEMA (SHADCN/UI) --- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -37,6 +38,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
+  /* --- BORDAS / RAIO --- */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -44,8 +47,21 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* --- ANIMAÇÕES CUSTOMIZADAS (SAVENUTRI) --- */
+  
+  /* 1. Define o movimento de ida e volta da barra de progresso */
+  @keyframes loading-bar {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* 2. Registra a classe 'animate-loading-bar' para uso no HTML */
+  --animate-loading-bar: loading-bar 2s infinite linear;
 }
 
+/* --- VARIÁVEIS DE COR OKLCH (MODO CLARO) --- */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -81,6 +97,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* --- VARIÁVEIS DE COR OKLCH (MODO ESCURO) --- */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -115,6 +132,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* --- ESTILOS GLOBAIS --- */
 @layer base {
   * {
     @apply border-border outline-ring/50;

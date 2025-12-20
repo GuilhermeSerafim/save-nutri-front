@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/Sidebar";
 import MapComponent from "@/components/MapComponent";
 import type { MatchResponse } from "@/types";
 import { Loader2 } from "lucide-react";
+import { ThemedLoader } from "@/components/ThemedLoader";
 
 // --- URL CHUMBADA (HARDCODED) ---
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -43,9 +44,7 @@ export default function Page() {
         setFarmers(farmersData);
       } catch (err) {
         console.error(err);
-        setError(
-          "Erro ao conectar com a api"
-        );
+        setError("Erro ao conectar com a api");
       } finally {
         setIsLoading(false);
       }
@@ -139,7 +138,9 @@ export default function Page() {
     );
   if (error) return <div className="p-10 text-red-500 font-bold">{error}</div>;
 
-  return (
+  return isLoading ? (
+    <ThemedLoader />
+  ) : (
     <div className="relative h-screen w-screen overflow-hidden bg-slate-100">
       <div className="absolute inset-0 z-0">
         <MapComponent
