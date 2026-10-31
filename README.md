@@ -1,3 +1,19 @@
+# SaveNutri — interface de demonstração
+
+Interface Next.js/React para visualizar escolas e pontos classificados como agricultores e solicitar uma correspondência geográfica ao backend SaveNutri. O mapa usa Mapbox; a página consome `/geojson/enriched` e `/match/calculate`.
+
+## Configuração da interface
+
+O código lê `NEXT_PUBLIC_API_URL` para o endereço da API e `NEXT_PUBLIC_MAPBOX_TOKEN` para o token público do mapa. Sem URL configurada, as chamadas usam a origem da própria interface. Use apenas configuração destinada ao navegador; não coloque credenciais privadas nessas variáveis.
+
+O pacote define `npm run dev`, `npm run build`, `npm start` e `npm run lint`.
+
+## Alcance e limites
+
+A linha desenhada liga diretamente as coordenadas selecionadas; não calcula caminho pelas ruas. No backend relacionado, produtos, demanda, orçamento e número de alunos são enriquecimentos simulados, e a economia é uma estimativa por fórmula. A interface não comprova estoque, transporte realizado, economia obtida ou adequação nutricional/legal.
+
+## Ambiente Next.js
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
